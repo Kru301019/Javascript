@@ -1,0 +1,3 @@
+function funny(a, b){
+
+}
