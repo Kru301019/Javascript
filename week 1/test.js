@@ -124,4 +124,41 @@ function addAllOpt(arr) {
 }
 
 const arrayAddAllOpt = [1, 5];
-console.log(addAllOpt(arrayAddAllOpt));
+//console.log(addAllOpt(arrayAddAllOpt));
+
+function divisors(arr, div) {
+  const newArray = [];
+  const newArrayTwo = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % div == 0) {
+
+      newArray.push(arr[i]);
+
+    } else {
+      newArrayTwo.push(arr[i]);
+    }
+  
+  }
+  return {
+    divisible: newArray,
+    nonDivisible: newArrayTwo
+  };
+}
+
+const arrForDivisors = [1, 2, 3, 4, 5, 16];
+const div = 4;
+
+const{divisible, nonDivisible} = (divisors(arrForDivisors, div));
+//console.log('divisible array is :', divisible);
+//console.log('nonDivisible is :', nonDivisible);
+
+function multiples (n, m){
+  let myArray = [];
+  for (i=1; i<=n; i++){
+    myArray.push(i*m);
+  }
+  return myArray;
+}
+
+console.log(multiples(3, 4))
+
