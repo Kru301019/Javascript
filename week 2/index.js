@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')();
+//const prompt = require('prompt-sync')();
 /*
  * This is index.js
  * Open index.html in your browser to check what
@@ -13,12 +13,20 @@ const prompt = require('prompt-sync')();
 
 // add your functions here
 
-
-function replaceText(elem, str){
+function replaceText(elem, str) {
     elem.innerText = str;
+}
+
+var myParagraph = document.querySelector('#thisisaparagraph');
+
+replaceText(myParagraph, 'Hell yeah');
+
+// No need to log the result of replaceText, as it doesn't return anything
+console.log(myParagraph.innerText);
+
+function addTextTo(elem ,str) {
+    elem.textContent += str;
 };
 
-var myH1 = document.getElementById('thisisaparagraph');
-
-
-replaceText(myH1, 'MY Javascript'); 
+var myElement = document.querySelector('#addto');
+addTextTo(myParagraph, 'Replace succuss!');
