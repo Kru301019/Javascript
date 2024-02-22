@@ -30,3 +30,17 @@ function addTextTo(elem ,str) {
 
 var myElement = document.querySelector('#addto');
 addTextTo(myParagraph, 'Replace succuss!');
+
+function moreBears() {
+    var myElem = document.querySelector('#animals') 
+    myElem.src = 'http://placebear.com/400/200';
+    myElem.alt = 'A bear.'
+    myElem.title = 'A BEAR!'
+};
+
+function setid(elem, str) {
+   return elem.textContent = str;
+};
+
+const elemForSetid = document.querySelector('#animals');
+setid(elemForSetid, 'myAnimal');
