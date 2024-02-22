@@ -39,8 +39,42 @@ function moreBears() {
 };
 
 function setid(elem, str) {
-   return elem.textContent = str;
+   return elem.id = str;
 };
 
-const elemForSetid = document.querySelector('#animals');
-setid(elemForSetid, 'myAnimal');
+var elemForSetid = document.querySelector('#addto');
+setid(elemForSetid, 'sucuss');
+
+function setClass(elem, str) {
+    elem.textContent = str;
+};
+
+var elemForSetClass = document.getElementsByClassName('greatcontent')[0];
+setClass(elemForSetClass, 'classSuccus');
+
+function addClass(elem, str) {
+    elem.classList.add(str);
+};
+
+var elemForAddClass = document.querySelector('#replacethis');
+addClass(elemForAddClass, 'classadded');
+
+function removeClass(elem, str){
+    elem.classList.remove(str);
+};
+
+var elemForremoveClass = document.querySelector('#helpme');
+removeClass(elemForremoveClass, 'greatcontent excellence downer');
+
+function newElement(name) {
+    return document.createElement(name);
+};
+
+var newDiv = newElement('new'); 
+document.body.appendChild(newDiv);
+
+function findElementById(id) {
+    return document.getElementById(id);
+};
+
+findElementById('wantaborder');
