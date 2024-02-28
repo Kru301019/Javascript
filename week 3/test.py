@@ -1,5 +1,5 @@
 def testMac(x) :
-    return x;
+    print('testasus')
     
 
 
