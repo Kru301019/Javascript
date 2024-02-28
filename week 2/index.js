@@ -1,4 +1,4 @@
-//const prompt = require('prompt-sync')();
+
 /*
  * This is index.js
  * Open index.html in your browser to check what
@@ -17,19 +17,10 @@ function replaceText(elem, str) {
     elem.innerText = str;
 }
 
-var myParagraph = document.querySelector('#thisisaparagraph');
-
-replaceText(myParagraph, 'Hell yeah');
-
-// No need to log the result of replaceText, as it doesn't return anything
-console.log(myParagraph.innerText);
-
 function addTextTo(elem ,str) {
     elem.textContent += str;
 };
 
-var myElement = document.querySelector('#addto');
-addTextTo(myParagraph, 'Replace succuss!');
 
 function moreBears() {
     var myElem = document.querySelector('#animals') 
@@ -38,43 +29,59 @@ function moreBears() {
     myElem.title = 'A BEAR!'
 };
 
-function setid(elem, str) {
-   return elem.id = str;
+function setId(elem, str) {
+    elem.id = str;
+    return elem;
 };
-
-var elemForSetid = document.querySelector('#addto');
-setid(elemForSetid, 'sucuss');
 
 function setClass(elem, str) {
-    elem.textContent = str;
+    elem.className = str;
+    return elem;
 };
 
-var elemForSetClass = document.getElementsByClassName('greatcontent')[0];
-setClass(elemForSetClass, 'classSuccus');
 
-function addClass(elem, str) {
+function addAClass(elem, str) {
     elem.classList.add(str);
+    return elem;
 };
 
-var elemForAddClass = document.querySelector('#replacethis');
-addClass(elemForAddClass, 'classadded');
 
-function removeClass(elem, str){
+function removeAClass(elem, str){
     elem.classList.remove(str);
+    return elem;
 };
 
-var elemForremoveClass = document.querySelector('#helpme');
-removeClass(elemForremoveClass, 'greatcontent excellence downer');
 
 function newElement(name) {
     return document.createElement(name);
 };
 
-var newDiv = newElement('new'); 
-document.body.appendChild(newDiv);
 
 function findElementById(id) {
     return document.getElementById(id);
 };
 
-findElementById('wantaborder');
+
+function findElementsByQuery(query) {
+    return document.querySelectorAll(query);
+};
+
+function reverseList(query) {
+    const list = document.querySelector(query); // Get the <ul> or <ol> element
+    const listItems = Array.from(list.children).reverse(); // Reverse the order of list items
+    listItems.forEach(element => list.appendChild(element)); // Append each item back to the list
+    return list; // Return the selected element
+}
+
+ function mover(moveElem, moveTo) {
+    moveTo.appendChild(moveElem);
+};
+
+
+// function test(){
+//     const myArray = [1,2,3,4,5];
+//     const reList = myArray.reverse(); //[5,4,3,2,1]
+//     reList.forEach(item => list.appendChild(item));
+// };
+
+// test();
