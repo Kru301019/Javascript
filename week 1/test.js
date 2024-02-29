@@ -160,5 +160,5 @@ function multiples (n, m){
   return myArray;
 }
 
-console.log(multiples(1, 4))
+console.log(multiples(4, 4))
 
