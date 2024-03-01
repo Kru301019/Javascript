@@ -67,8 +67,10 @@ function reverseList(query) {
 }
 
 function mover(moveThis, appendToThis) {
-    const textContentToMove = moveThis.textContent;
-    appendToThis.append(textContentToMove);
+    const child = document.querySelector(moveThis);
+    const parent = document.querySelector(appendToThis);
+    console.log(child.textContent);
+    parent.append(child);
 };
 
 function filler(list, candidates) {
@@ -80,16 +82,36 @@ function filler(list, candidates) {
     };
  };
 
-function dupe() {
-
+function dupe(selector) {
+    const elem = document.querySelector(selector);
+    const clonedElem = elem.cloneNode(true);
+    elem.parentNode.append(clonedElem);
+    
 };
 
-// function test(){
-//     const entries = ['Shmi', 'Anakin', 'Luke'];
+function removeAll(selector) {
+  const elem = document.querySelectorAll(selector);
 
-//     for(const name of entries) {
-//         console.log(name);
-//     }
-// };
+  for (const i of elem){
+       i.textContent = 'I love you';
+  };
+};
 
-// test();
+function getUserData() {
+  const userName = document.querySelector('#username');
+  const mySpeed = document.querySelector('#speed');
+  const myStudnet = document.querySelector('#student');
+  let isStudent
+  myStudnet.addEventListener('change', function() {
+       isStudent = myStudnet.checked;
+       
+  });
+
+  const result = {
+      name : userName.value,
+      speed : mySpeed.value,
+      student : isStudent
+  };
+
+  console.log(result);
+};
