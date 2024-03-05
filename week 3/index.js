@@ -60,14 +60,47 @@ function concatAttacher() {
  */
 
 
-function mouseIN(e) {
-    e.target.textContent = 'In'; 
-};
+// function mouseIN(e) {
+//     e.target.textContent = 'In'; 
+// };
 
-function mouseOut(e) {
-  e.target.textContent = 'Out'; 
-};
+// function mouseOut(e) {
+//   e.target.textContent = 'Out'; 
+// };
 
-const mouseBox = document.querySelector('#snitch');
-mouseBox.addEventListener('mouseover', mouseIN);
-mouseBox.addEventListener('mouseout', mouseOut);
+// const mouseBox = document.querySelector('#snitch');
+// mouseBox.addEventListener('mouseover', mouseIN);
+// mouseBox.addEventListener('mouseout', mouseOut);
+
+// function mouseIN(e) {
+//     const myReport = document.querySelector('#report');
+//     const x = e.clientX;
+//     const y = e.clientY;
+//     myReport.textContent = `x: ${x}, y: ${y}`;
+// };
+
+// function reportAttacher() {
+//   const reportInput = document.querySelector('#mousereporter');
+//   reportInput.addEventListener('mousemove',mouseIN);
+// };
+
+// reportAttacher();
+
+// Select the input field and the error message
+const inputField = document.querySelector('#newid');
+const errorMessage = document.querySelector('#newiderror');
+
+// Hide the error message initially
+errorMessage.style.display = 'none';
+
+// Add an input event listener to the input field
+inputField.addEventListener('input', function() {
+    // Check if the input value contains a space
+    if (inputField.value.includes(' ')) {
+        // If it does, show the error message
+        errorMessage.style.display = 'inline';
+    } else {
+        // If it doesn't, hide the error message
+        errorMessage.style.display = 'none';
+    }
+});
