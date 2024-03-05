@@ -18,19 +18,21 @@
 <p id=greeting>Preparing greeting…</p>
 
 <script>
-  function handleInput() {
-    const out = document.querySelector('#greeting');
-    const fn = document.querySelector('#fn')?.value;
-    const sn = document.querySelector('#sn')?.value;
-    const age = document.querySelector('#age')?.valueAsNumber;
-    if (fn && sn && age) {
-      out.textContent =
-      `Hello ${fn} ${sn}!  Next year you'll be ${age + 1}`;
-    }
-  }
 
-  const inputs = document.querySelectorAll('input');
-  for (const i of inputs) {
-    i.addEventListener('input', handleInput);
-  }
+    function handleInput(e) {
+      const firstName = document.querySelector('#fn')?.value;
+      const  lastName = document.querySelector('#sn')?.value;
+      const  age = document.querySelector('#age')?.valueAsNumber;
+      const  myGreeting = document.querySelector('#greeting');
+
+        if (firstName && lastName && age) {
+          
+          myGreeting.textContent = `${firstName} ${lastName} ${age+1}`;
+        };
+    };
+
+    const myInputs = document.querySelectorAll('input');
+    for (const myInput of myInputs) {
+      myInput.addEventListener('input',handleInput);
+    };
 </script>

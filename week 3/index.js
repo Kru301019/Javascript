@@ -36,13 +36,13 @@
 //     button_1.addEventListener('click', lovelyToggle);
 // };
 
-const inputOne = document.querySelector("#in1");
-const inputTwo = document.querySelector("#in2");
-const out = document.querySelector("#out1");
+// const inputOne = document.querySelector("#in1");
+// const inputTwo = document.querySelector("#in2");
+// const out = document.querySelector("#out1");
 
-function updateOutPut() {
+/* function updateOutPut() {
 
-  const combainedValue = `${inputOne.value} ${inputTwo.value}`;
+  const combainedValue = `${inputOne?.value} ${inputTwo?.value}`;
   out.textContent = combainedValue;
 }
 
@@ -57,5 +57,17 @@ function concatAttacher() {
   inputOne.addEventListener("keydown", checkForEnter);
   inputTwo.addEventListener("keydown", checkForEnter);
 }
+ */
 
-concatAttacher();
+
+function mouseIN(e) {
+    e.target.textContent = 'In'; 
+};
+
+function mouseOut(e) {
+  e.target.textContent = 'Out'; 
+};
+
+const mouseBox = document.querySelector('#snitch');
+mouseBox.addEventListener('mouseover', mouseIN);
+mouseBox.addEventListener('mouseout', mouseOut);
