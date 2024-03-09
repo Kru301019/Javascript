@@ -7,19 +7,44 @@
 
 'use strict';
 
-async function showMessage(element, url) {
-    try {
-        const response = await fetch(url);
-        const text = await response.text();
-        element.textContent = text;
-    } catch (error) {
-        console.error('Error fetching data:', error);
+// async function showMessage(elem, url) {
+//     try {
+//         const response = await fetch(url);
+//         const text = await response.text();
+//         elem.textContent = text;
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//     }
+// }
+
+// window.addEventListener('load',  showMessage);
+
+function report(message, isError = false) {
+    if (isError) {
+        console.error(message);
+    } else {
+        console.log(message);
     }
 }
 
-const elemOne = document.querySelector('#message');
-const urlOne = 'example_one.txt';
+async function showList(elem, url) {
+    try {
+        const response = await fetch(url);
 
+        if (response.ok) {
+            const data = await response.json();
+            report(data);
+        } else {
+            report('No data', true);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        report('Error fetching data', true);
+    }
+}
+
+const elemTwo = document.querySelector('#list2');
+const urlTwo = 'http://jacek.soc.port.ac.uk/tmp/ws/arr8';
 window.addEventListener('load', () => {
-    showMessage(elemOne, urlOne);
+    showList(elemTwo, urlTwo);
 });
