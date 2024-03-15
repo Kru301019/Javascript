@@ -50,22 +50,22 @@
 // });
 
 // Define the function that takes an element and a URL as parameters
-function startShowingMessage(element, url) {
-    // Use setInterval to repeat the task every 1 second
-    setInterval(function() {
-      // Use fetch to get the data from the URL
-      fetch(url)
-        .then(response => response.text()) // Convert the response to text
-        .then(data => {
-          // Update the text content of the element with the data
-          element.textContent = data;
-        })
-        .catch(error => {
-          // Handle any errors
-          console.error(error);
-        });
-    }, 1000); // 1000 milliseconds = 1 second
-  }
+// function startShowingMessage(element, url) {
+//     // Use setInterval to repeat the task every 1 second
+//     setInterval(function() {
+//       // Use fetch to get the data from the URL
+//       fetch(url)
+//         .then(response => response.text()) // Convert the response to text
+//         .then(data => {
+//           // Update the text content of the element with the data
+//           element.textContent = data;
+//         })
+//         .catch(error => {
+//           // Handle any errors
+//           console.error(error);
+//         });
+//     }, 1000); // 1000 milliseconds = 1 second
+//   }
   
 
-window.addEventListener('load', startShowingMessage);
+// window.addEventListener('load', startShowingMessage);
