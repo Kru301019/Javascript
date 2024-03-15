@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample HTML with Fetch</title>
+  </head>
+  <body>
+    <section>
+     
+      <ul id="myList"></ul>
+    </section>
+
+    <script>
+      function startShowingMessage() {
+        const myList = document.getElementById('myList');
+
+        setInterval(async function() {
+          try {
+            const response = await fetch('https://jacek.soc.port.ac.uk/tmp/ws/dyn1');
+            const data = await response.text();
+            if(!response.ok) {
+                throw new Error('new error ${response.status}')
+            }
+            const listItem = document.createElement('li');
+            listItem.textContent = data;
+            myList.append(listItem);
+
+          } catch(error) {
+            console.log('Error fetching my data:', error);
+          }
+        }, 1000);
+      }
+
+      window.addEventListener("load", startShowingMessage);
+    </script>
+  </body>
+</html>
