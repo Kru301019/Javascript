@@ -11,6 +11,6 @@ export function subtract(a, b) {
  * "export" to the function definition (as seen in the
  * subtract example above)
  */
-function add(a, b) {
+export function add(a, b) {
   return a + b;
 }
